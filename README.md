@@ -18,6 +18,14 @@ You can then visit Kibana by running `ddev kibana` or visiting the URL shown in 
 
 The add-on assumes that the Elasticsearch service is named `elasticsearch`.
 
+This add-on tries to always use the latest version of Kibana, which might not be compatible with your version of Elasticsearch. If you are using in incompatible version, try to change the version of the image in the `.ddev/docker-compose.override.yaml` file, like this:
+
+```yaml
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.0.0
+```
+
 ## Explanation
 
 Kibana is a free and open-source gui for elasticsearch that you can use to manage the data in your cluster.
